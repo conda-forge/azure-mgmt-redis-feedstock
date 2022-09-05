@@ -1,5 +1,5 @@
 {% set name = "azure-mgmt-redis" %}
-{% set version = "6.0.0" %}
+{% set version = "14.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip
-  sha256: db999e104edeee3a13a8ceb1881e15196fe03a02635e0e20855eb52c1e2ecca1
+  sha256: 584acd4228a79b104dc9a380a9b1d61a4d8e2f1b4cf68eb7c0311019ffa22fa4
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -31,7 +31,7 @@ test:
     - azure.mgmt.redis
 
 about:
-  home:  https://github.com/Azure/azure-sdk-for-python
+  home: https://github.com/Azure/azure-sdk-for-python
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
